@@ -10,13 +10,13 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-// salvando nossos dados do SDK
+/* salvando nossos dados do SDK
 const serviceAccount = JSON.parse(process.env.SERVICE_ACCOUNT);
 
 // inicializando o SDK
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-});
+});*/
 
 // importando o router
 require('./app/routes/api.route.js')(app) // router cuida de "root/api"

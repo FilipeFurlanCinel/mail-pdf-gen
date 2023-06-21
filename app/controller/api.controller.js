@@ -27,26 +27,16 @@ var fs = require("fs");
 exports.createPDF = async (req, res) => {
   try {
     // tratando o req body
-    console.log(req.body)
     const reqTratado = [];
 
-    const appGyverReq = [
-      {
-        tarefa: "taerfa1",
-        concluido: "sim",
-      },
-      {
-        tarefa: "tarefaexemplo",
-        concluido: "nao",
-      },
-    ];
-
+    const pdfHeader = req.body.data
+    const appGyverReq = req.body.data.tarefas
     for (i = 0; i < appGyverReq.length; i++) {
       const rows = new Array();
       appGyverReq[i].posicao = i + 1;
+      rows.push(appGyverReq[i].posicao);
       rows.push(appGyverReq[i].tarefa);
       rows.push(appGyverReq[i].concluido);
-      rows.push(appGyverReq[i].posicao);
       reqTratado.push(rows);
     }
 
@@ -54,7 +44,7 @@ exports.createPDF = async (req, res) => {
     var docDefinition = {
       content: [
         {
-          text: "20/06\n Molicente\n Loja\n Açougue\n 50% \n \n \n",
+          text: `${pdfHeader.data}\n ${pdfHeader.rede}\n ${pdfHeader.loja}\n ${pdfHeader.setor}\n ${pdfHeader.porcentagem} \n \n \n`,
           style: 'header',
           fontSize: 30,
           alignment: 'center',
