@@ -1,27 +1,11 @@
 /* eslint-disable */
 // sendo importado no SERVER como ApiController
 
-// pdfmake
-var fonts = {
-  Roboto: {
-    normal: "public/fonts/Roboto/Roboto-Regular.ttf",
-    bold: "public/fonts/Roboto/Roboto-Medium.ttf",
-    italics: "public/fonts/Roboto/Roboto-Italic.ttf",
-    bolditalics: "public/fonts/Roboto/Roboto-MediumItalic.ttf",
-  },
-
-  OpenSans: {
-    normal: "OpenSans",
-    bold: "OpenSans-Bold",
-    italics: "OpenSans-Italic",
-    bolditalics: "OpenSans-BoldItalic",
-  },
-};
-
 // libs
-var PdfPrinter = require("pdfmake");
-var printer = new PdfPrinter(fonts);
-var fs = require("fs");
+const fonts = require("../config/config.pdf").fonts
+const PdfPrinter = require("pdfmake");
+const printer = new PdfPrinter(fonts);
+fs = require("fs");
 
 // post /gerarRelatorio
 exports.createPDF = async (req, res) => {
