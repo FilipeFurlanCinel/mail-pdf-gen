@@ -1,18 +1,12 @@
+/* eslint-disable */
 // pdfmake fonts
+const fonts = require('pdfmake/build/vfs_fonts.js')
+
 exports.fonts = {
   Roboto: {
-    normal: "app/public/fonts/Roboto/Roboto-Regular.ttf",
-    bold: "app/public/fonts/Roboto/Roboto-Medium.ttf",
-    italics: "app/public/fonts/Roboto/Roboto-Italic.ttf",
-    bolditalics: "app/public/fonts/Roboto/Roboto-MediumItalic.ttf",
-  },
-
-  OpenSans: {
-    normal: "OpenSans",
-    bold: "OpenSans-Bold",
-    italics: "OpenSans-Italic",
-    bolditalics: "OpenSans-BoldItalic",
-  },
+    normal: Buffer.from(fonts.pdfMake.vfs['Roboto-Regular.ttf'], 'base64'),
+    bold: Buffer.from(fonts.pdfMake.vfs['Roboto-Medium.ttf'], 'base64'),
+    italics: Buffer.from(fonts.pdfMake.vfs['Roboto-Italic.ttf'], 'base64'),
+    bolditalics: Buffer.from(fonts.pdfMake.vfs['Roboto-Italic.ttf'], 'base64'),
+  }
 };
-
-
