@@ -6,7 +6,7 @@ const router = express.Router()
 const controllers = require('../controller/api.controller')
 
 // criando o PDF pdfMaker
-router.post('/gerarPDF', controllers.createPDF)
+router.post('/gerarPDF', controllers.createPDF) 
 
 // enviando emails
 router.post('/enviarEmail', controllers.sendMail)
