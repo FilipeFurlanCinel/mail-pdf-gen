@@ -5,11 +5,6 @@ const functions = require('firebase-functions')
 const admin = require('firebase-admin')
 const cors = require('cors')({ origin: true })
 
-admin.initializeApp({
-  credential: admin.credential.cert({
-    // inserir dados para autenticar o usuario
-  })
-})
 
 // nosso bucket no fire Storage
 const bucket = require('../config/config.db')
