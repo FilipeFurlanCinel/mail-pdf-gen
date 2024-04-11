@@ -107,8 +107,8 @@ exports.createPDF = functions.https.onRequest((req, res) => {
 // libs nodeMailer
 const nodemailer = require('nodemailer')
 
-const email = 'sismerapp@gmail.com'
-const senha = 'cmkncvqhzehrztei'
+const email = #####
+const senha = #####
 
 // post/ enviarEmail
 exports.sendMail = functions.https.onRequest((req, res) => {
