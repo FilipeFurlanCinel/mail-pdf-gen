@@ -1,5 +1,4 @@
 /* eslint-disable */
-// sendo importado no SERVER como ApiController
 const fs = require('fs')
 const functions = require('firebase-functions')
 const admin = require('firebase-admin')
